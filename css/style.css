@@ -18,8 +18,43 @@ body {
 header .main-header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin: 2% 2%;
+    justify-content: space-around;
+    margin: 1.5% 1.5%;
+}
+
+nav {
+    width: 60%;
+}
+
+nav .nav-intro ul {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    list-style: none;
+}
+nav .nav-intro ul li:not(:first-child) {
+    color: grey;
+}
+
+nav .nav-intro ul li:not(:first-child):hover {
+    color: orangered;
+}
+
+nav .nav-intro li {
+    margin: auto 2%;
+}    
+
+@media (max-width: 415px) {
+    
+    nav .nav-intro ul {
+        display: none;
+    }
+    nav {
+        background-image: url("../img/menu-hamburger.svg");
+        background-repeat: no-repeat;
+        background-position: right;
+        margin-right: 3%;
+    }
 }
 
 main .content-container {
@@ -30,6 +65,7 @@ main .content-container {
     background-position: center;
     
     padding: 32vh;
+    line-height: 2.5em;
     
     display: flex;
     justify-content: space-around;
@@ -37,35 +73,81 @@ main .content-container {
     flex-direction: column;
 }
 
+main .content-container p {
+    font-size: 1.7em;
+    font-weight: lighter;
+}
+
 main #learn-button {
     background-color: orangered;
     border-radius: 4px;
     border: none;
-    padding: 10px 10px;
+    padding: 0 10px;
+}
+@media (max-width: 1100px) {
+    main .content-container {
+        padding: 20vh;
+        font-size: 1.3em;
+        text-align: center;
+    }
+}
+@media (max-width: 415px) {
+    main .content-container {
+        background-position: 60% 50%;
+        padding: 10vh;
+    }
 }
 
 section .main-info {
     text-align: center;
+    margin-top: 6%;
 }
-.main-info-describe {
+.main-info .main-info-describe {
     display: flex;
    flex-direction: row;
    justify-content: space-around;
    margin: 5% 2%;
 }
-.main-info h1 {
+
+h1 {
     font-weight: lighter;
+    font-size: 3em;
+    margin: 0.01em 0;
 }
+
+@media (max-width: 415px) {
+   .main-info .main-info-describe {
+    display: flex;
+    flex-direction: column;
+   }
+    h1 {
+       font-size: 2.2em;
+        line-height: 1em;
+        font-weight: lighter;
+   }
+   main .content-container p {
+       font-size: 1.2em;
+   }
+   #learn-button {
+       line-height: normal;
+   }
+}
+
 
 
 .footer {
     text-align: center;
     border-top: rgba(128, 128, 128, 0.418) solid 1px;
-    
+    margin-bottom: 5%;
 }
+
 .footer img {
     border: rgba(128, 128, 128, 0.418) solid 1px;
     border-radius: 90px;
     padding: 1%;
     margin: 0 1%;
+}
+
+.footer p {
+    color: grey;
 }
